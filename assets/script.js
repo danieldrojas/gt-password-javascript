@@ -55,7 +55,6 @@ function generatePassword() {
         password = password + alphabet[index].toUpperCase();
         console.log(password);
       }
-      // console.log(password);
       if (okNumbers && password.length < passwordLength) {
         console.log(password);
         var index = Math.floor(Math.random() * numbers.length);
@@ -63,14 +62,11 @@ function generatePassword() {
         password = password + numbers[index];
         console.log(password);
       }
-
       if (!okSpecialChar && !okLowerCase && !okUpperCase && !okNumbers)
-          return "No option selected";
-      
+          return "No option selected";      
     }
   }
   return password;
-
 }
 
 

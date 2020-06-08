@@ -1,7 +1,7 @@
 # Password Generator Web App
 
 ![Javascript](https://img.shields.io/badge/Js-Logic-red)
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md)
+
 
 ## Table of Contents 
 
@@ -18,7 +18,7 @@ Clone repository on local machine and run HTML file in browser.
 ## Usage 
 The present files were modified by adding logic into the JavaScript file to implement a password generator.
 
-[Deployed Portfolio Site](https://danieldrojas.github.io/gt-refactor-accessibility/)
+[Deployed Password Generator](https://danieldrojas.github.io/gt-password-javascript/)
 
 ![Web App](./assets/style/pic-website.png)
 
