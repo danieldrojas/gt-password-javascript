@@ -18,27 +18,30 @@ function generatePassword() {
 
   //   Prompt user to create password `
 
-  alert("Create password?");
   var passwordLength = prompt("How many characters would you like to include?");
  
   if(!(passwordLength)) {
 
   
-    var password = "You did not create a password";
-    return password;
-
-
-
-     
+    return "Password was not created";    
   }
+
+
   else {
+
+    while (isNaN(passwordLength)) {
+     passwordLength  = prompt("This is not a number, try again:");
+      
+    }
 
   
    
     //Loop to validate input 
     while (passwordLength < 8 || passwordLength > 128) {
-      passwordLength = prompt("Invalid password length, Try again");
+      passwordLength = prompt("Invalid password length, try again:");
     }
+
+  
 
 
     //Variables 
