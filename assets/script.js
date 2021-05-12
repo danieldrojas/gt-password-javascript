@@ -21,10 +21,10 @@ function generatePassword() {
   let passwordLength = inputValidation();
 
   //Password parameters 
-  let okSpecialChar = confirm("Click Ok to confirm special characters");
-  let okLowerCase = confirm("Click Ok to confirm including lowercase character");
-  let okUpperCase = confirm("Click Ok to confirm including uppercase character");
-  let okNumbers = confirm("Click Ok to confirm including numbers");
+  let hasSpecialChar = confirm("Click Ok to confirm special characters");
+  let hasLowerCase = confirm("Click Ok to confirm including lowercase character");
+  let hasUpperCase = confirm("Click Ok to confirm including uppercase character");
+  let hasNumbers = confirm("Click Ok to confirm including numbers");
 
 
   //Declare password
@@ -34,8 +34,8 @@ function generatePassword() {
   let isValidLength = password => password.length < passwordLength
 
   //Func: concatenate a new character to password
-  let addCharacter = (passwordParameter, isUpper = false) => {
-    if (isUpper) {
+  let addCharacter = (passwordParameter, isUpperCase = false) => {
+    if (isUpperCase) {
       let index = Math.floor(Math.random() * passwordParameter.length);
       password += passwordParameter[index].toUpperCase();
 
@@ -49,19 +49,19 @@ function generatePassword() {
   //Fill up password to passwordLength
   while (password.length < passwordLength) {
 
-    if (okSpecialChar)
+    if (hasSpecialChar)
       if (isValidLength(password))
         addCharacter(SPECIAL_CHARACTERS)
 
-    if (okLowerCase)
+    if (hasLowerCase)
       if (isValidLength(password))
         addCharacter(ALPHABET);
 
-    if (okUpperCase)
+    if (hasUpperCase)
       if (isValidLength(password))
         addCharacter(ALPHABET, true)
 
-    if (okNumbers)
+    if (hasNumbers)
       if (isValidLength(password))
         addCharacter(NUMBERS)
   }
