@@ -1,4 +1,5 @@
-import { inputValidation } from './inputValidation.js'
+import { inputValidation } from './inputValidation.js';
+import { SPECIAL_CHARACTERS, ALPHABET, NUMBERS } from './stringChar.js'
 // Assignment Code
 let generateBtn = document.querySelector("#generate");
 
@@ -24,9 +25,7 @@ function generatePassword() {
   let okLowerCase = confirm("Click Ok to confirm including lowercase character");
   let okUpperCase = confirm("Click Ok to confirm including uppercase character");
   let okNumbers = confirm("Click Ok to confirm including numbers");
-  let allSpecialChar = "!#$%&'“,()*+,-./:;<=>?@[]^_`{|}~";
-  let alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-  let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
 
   //Declare password
   let password = "";
@@ -52,19 +51,19 @@ function generatePassword() {
 
     if (okSpecialChar)
       if (isValidLength(password))
-        addCharacter(allSpecialChar)
+        addCharacter(SPECIAL_CHARACTERS)
 
     if (okLowerCase)
       if (isValidLength(password))
-        addCharacter(alphabet);
+        addCharacter(ALPHABET);
 
     if (okUpperCase)
       if (isValidLength(password))
-        addCharacter(alphabet, true)
+        addCharacter(ALPHABET, true)
 
     if (okNumbers)
       if (isValidLength(password))
-        addCharacter(numbers)
+        addCharacter(NUMBERS)
   }
   return password
 }
