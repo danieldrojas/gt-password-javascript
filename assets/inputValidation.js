@@ -12,5 +12,5 @@ export let inputValidation = () => {
     while (isNaN(passwordLength)) {
         passwordLength = prompt("This is not a number, try again:");
     }
-    return passwordLength;
+    return parseInt(passwordLength);
 }
