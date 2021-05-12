@@ -1,23 +1,23 @@
 import { inputValidation } from './inputValidation.js';
 import { SPECIAL_CHARACTERS, ALPHABET, NUMBERS } from './stringChar.js'
-// Assignment Code
-let generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
-function writePassword() {
-  let password = generatePassword(),
-    passwordText = document.querySelector("#password");
-
+let writePassword = () => {
+  let password = generatePassword();
+  let passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
 
-// Add event listener to generate button
+// Create and add event listener to generate button
+let generateBtn = document.querySelector("#generate");
 generateBtn.addEventListener("click", writePassword);
 
-//Create password
-function generatePassword() {
+//Func: create password
+let generatePassword = () => {
+  //Declare password
+  let password = "";
 
-  //Validation return length if valid
+  //Func inputValidation return length if valid
   let passwordLength = inputValidation();
 
   //Password parameters 
@@ -27,25 +27,17 @@ function generatePassword() {
   let hasNumbers = confirm("Click Ok to confirm including numbers");
 
 
-  //Declare password
-  let password = "";
 
   //Func: check length of password
-  let isValidLength = password => password.length < passwordLength
+  let isValidLength = password => password.length < passwordLength;
 
   //Func: concatenate a new character to password
   let addCharacter = (passwordParameter, isUpperCase = false) => {
-    if (isUpperCase) {
-      let index = Math.floor(Math.random() * passwordParameter.length);
-      password += passwordParameter[index].toUpperCase();
+    let character = passwordParameter[Math.floor(Math.random() * passwordParameter.length)];
+    isUpperCase ? character = character.toUpperCase() : character
+    password += character
 
-    }
-    else {
-      let index = Math.floor(Math.random() * passwordParameter.length);
-      password += passwordParameter[index];
-    }
   }
-
   //Fill up password to passwordLength
   while (password.length < passwordLength) {
 
