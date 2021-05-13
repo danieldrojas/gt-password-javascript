@@ -1,8 +1,9 @@
 export let inputValidation = () => {
     let passwordLength = prompt("How many characters would you like to include?");
     //Validate length
-    if (!(passwordLength)) {
-        return "Invalid length";
+    while (!passwordLength) {
+        passwordLength = prompt("Invalid length, How many characters would you like to include?");
+
     }
     //Loop to validate input length
     while (passwordLength < 8 || passwordLength > 128) {

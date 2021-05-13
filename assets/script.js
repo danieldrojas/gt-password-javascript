@@ -4,6 +4,7 @@ import { SPECIAL_CHARACTERS, ALPHABET, NUMBERS } from './stringChar.js'
 
 // Write password to the #password input
 let writePassword = () => {
+  //TODO: clear textarea back to placeholder when submit 
   let passwordText = document.querySelector("#password");
   let password = generatePassword();
   passwordText.value = password;
