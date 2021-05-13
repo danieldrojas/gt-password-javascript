@@ -1,10 +1,11 @@
 import { inputValidation } from './inputValidation.js';
+import { userParameterSelection } from './passwordParameters.js';
 import { SPECIAL_CHARACTERS, ALPHABET, NUMBERS } from './stringChar.js'
 
 // Write password to the #password input
 let writePassword = () => {
-  let password = generatePassword();
   let passwordText = document.querySelector("#password");
+  let password = generatePassword();
   passwordText.value = password;
 }
 
@@ -20,12 +21,8 @@ let generatePassword = () => {
   //Func inputValidation return length if valid
   let passwordLength = inputValidation();
 
-  //Password parameters 
-  let hasSpecialChar = confirm("Click Ok to confirm special characters");
-  let hasLowerCase = confirm("Click Ok to confirm including lowercase character");
-  let hasUpperCase = confirm("Click Ok to confirm including uppercase character");
-  let hasNumbers = confirm("Click Ok to confirm including numbers");
-
+  // User's selection(s) password parameter(s)
+  const { hasSpecialChar, hasLowerCase, hasUpperCase, hasNumbers } = userParameterSelection()
 
 
   //Func: check length of password
@@ -35,8 +32,7 @@ let generatePassword = () => {
   let addCharacter = (passwordParameter, isUpperCase = false) => {
     let character = passwordParameter[Math.floor(Math.random() * passwordParameter.length)];
     isUpperCase ? character = character.toUpperCase() : character
-    password += character
-
+    password += character;
   }
   //Fill up password to passwordLength
   while (password.length < passwordLength) {
