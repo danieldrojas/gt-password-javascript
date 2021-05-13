@@ -2,20 +2,20 @@
 
 ![Javascript](https://img.shields.io/badge/Js-Logic-red)
 
+## Table of Contents
 
-## Table of Contents 
-
-* [Installation](#installation)
-* [Usage](#usage)
-* [Credits](#credits)
-* [MIT License](#MIT-License)
-* [Contributing](#Contributing)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [MIT License](#MIT-License)
+- [Contributing](#Contributing)
 
 ## Installation
 
 Clone repository on local machine and run HTML file in browser.
 
-## Usage 
+## Usage
+
 The present files were modified by adding logic into the JavaScript file to implement a password generator.
 
 [Deployed Password Generator](https://danieldrojas.github.io/gt-password-javascript/)
@@ -47,8 +47,9 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
 ---
 
 ## Contributing
 
-No contributions at this time. 
+No contributions at this time.
